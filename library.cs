@@ -1,14 +1,23 @@
 namespace Midterm {
 	public class Library {
-		private List<Book> allBooks {get; set;}
+		private List<IMaterial> allMaterials {get; set;}
 		
-		public void AddBook(Book book) {
-			allBooks.Add(book);
+		public Library() {
+			allMaterials =  new ();
 		}
 		
-		public void ShowBooks() {
-			foreach (Book book in allBooks) {
-				book.GetInfo();
+		public void AddMaterial(IMaterial material) {
+			if (!allMaterials.Contains(material)) {  
+				allMaterials.Add(material);
+			}
+			else {
+				Console.WriteLine("Material already in list");
+			}
+		}
+		
+		public void ShowMaterials() {
+			foreach (var material in allMaterials) {
+				material.GetInfo();
 			}
 		}
 	}

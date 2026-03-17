@@ -1,6 +1,6 @@
 namespace Midterm {
-	public class Book {
-		public string Name {get; private set;}
+	public class Book : IMaterial {
+		public string Name {get;}
 		public string Year {get; private set;}
 		
 		public Book(string name, string year) {
@@ -9,7 +9,7 @@ namespace Midterm {
 		}
 		
 		public void GetInfo() {
-			Console.WriteLine("Book '{Name}' published in {Year}");
+			Console.WriteLine($"Book '{Name}' published in {Year}");
 		}
 	}
 }
